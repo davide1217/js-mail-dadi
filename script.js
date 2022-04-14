@@ -8,16 +8,17 @@ Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
 Stabilire il vincitore, in base a chi fa il punteggio più alto*/
 
 const autorized = ['ugodeughi@gmail.com', 'lellodelellis@gmail.com'];
-const email = document.getElementById('_email').value;
+const email = prompt('insert your email');
 const submit = document.getElementById('_submit');
 
-submit.addEventListener('click', function() {
-if(email === autorized) {
-  document.getElementById('autorization').innerHTML = 'you are welcome'
-} else {
-  document.getElementById('autorization').innerHTML = 'nice try'
+
+for (i = 0; i < autorized.length; i++){
+  if(email === autorized[i]) {
+    document.getElementById('autorization').innerHTML = 'you are welcome'
+  } else {
+        document.getElementById('autorization').innerHTML = 'please, register'
+  }
 }
-});
 
 
 const btn = document.querySelector('body > button');
@@ -31,6 +32,8 @@ btn.addEventListener('click', function() {
 
   if(player.innerHTML > computer.innerHTML) {
     document.getElementById('_result').innerHTML = 'wow, sei fortunato!'
+  } else if(player.innerHTML = computer.innerHTML) {
+    document.getElementById('_result').innerHTML = 'pari...spareggiamo!!!'
   } else {
     document.getElementById('_result').innerHTML = 'Riprova, sarai più fortunato'
   }
